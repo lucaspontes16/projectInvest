@@ -1,3 +1,14 @@
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efeito de hover */
+.card:hover {
+    transform: scale(1.05);
+    /* Aumenta levemente o tamanho */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    /* Adiciona uma sombra para dar profundidade */
+}
 .new-card {
     padding: 3rem 0;
     margin: 2rem 0px;
