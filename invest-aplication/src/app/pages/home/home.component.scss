@@ -1,29 +1,30 @@
-
-
-//news card
+// Remove posicionamento estático para não quebrar responsividade
 .card-news {
-    padding: 0rem;
-        padding-top: 3rem !important;
-        padding-bottom: 3rem !important;
-        width: 41rem;
-        height:  58rem;
-        margin: 1rem 2rem;
-        position: relative;
-        left: 13rem;
-        border-radius: 0px;
-        .card-news:hover{
-                transform: scale(1.05);
-                /* Aumenta levemente o tamanho */
-                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);}
-    }
-        .new-card {
-            height: 44rem !important;
-        }
+    padding: 3rem 0;
+    margin: 1rem;
+    width: 100%; // Deixa o Bootstrap controlar a largura
+    height: auto; // Ajusta a altura automaticamente
+    border-radius: 0px;
 
-.cards-rigth {
-            flex: 0 0 auto;
-            width: 46rem;
-            position: relative;
-            right: 5rem;
-            padding: 4rem 0rem;
-        }
+    // Regras específicas para telas grandes
+    @media (min-width: 992px) {
+        width: 41rem; // Redefine largura para telas grandes
+        height: 58rem;
+        margin-left: 16rem;
+    }
+
+    .new-card {
+        height: 44rem !important; // Manter ajuste apenas onde necessário
+    }
+}
+
+// Ajuste responsivo para o container da direita
+.rigth-cards {
+    padding: 2rem 0; // Ajusta espaçamento globalmente
+    width: 100%; // Garantir que a largura seja dinâmica
+
+    @media (min-width: 992px) {
+        width: 46rem; // Largura para telas grandes
+        padding: 4rem 0;
+    }
+}
