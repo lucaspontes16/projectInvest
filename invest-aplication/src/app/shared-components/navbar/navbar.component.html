@@ -1,26 +1,43 @@
-
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#">MyApp</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+<nav class="navbar navbar-light bg-light">
+    <div class="container d-flex justify-content-between">
+        <!-- Botão do menu offcanvas -->
+        <button class="navbar-toggler order-1" type="button" data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/about">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/services">Services</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/contact">Contact</a>
-                </li>
+
+        <!-- Nome e links do site -->
+        <a class="navbar-brand order-2 ms-auto" href="#">
+            <ul class="navbar-nav d-flex align-items-center mb-0">
+                <li class="nav-item me-4"><a class="nav-link" href="#">Home</a></li>
+                <li class="nav-item me-4"><a class="nav-link" href="#">About us</a></li>
+                <img class="logo-toolbar" src="logo-menu.png">
+
+
             </ul>
-        </div>
+
+        </a>
     </div>
 </nav>
+
+<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel"><img class="logo-menu" src="logo-menu.png">Invest 360</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/about">Profile</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/services">About</a>
+            </li>
+
+        </ul>
+    </div>
+    <a class="btn link-secondary logout" href="#" role="button">Logout</a>
+</div>

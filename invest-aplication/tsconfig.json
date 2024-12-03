@@ -1,18 +1,17 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "outDir": "./out-tsc",
+    "baseUrl": "./",
+    "outDir": "./dist/out-tsc",
     "sourceMap": true,
-    "declaration": true,
-    "moduleResolution": "node",
+    "declaration": false,
     "experimentalDecorators": true,
+    "moduleResolution": "node",
     "target": "es2015",
     "module": "es2020",
-    "lib": ["es2020", "dom"],
-    "skipLibCheck": true,
-    "esModuleInterop": true
+    "lib": ["es2018", "dom"]
   },
   "angularCompilerOptions": {
-    "strictInjectionParameters": true
+    "strictTemplates": true
   }
 }

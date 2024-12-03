@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "tsConfig":"tsconfig.json",
+            "tsConfig": "tsconfig.json",
             "outputPath": "dist/invest-aplication",
             "index": "src/index.html",
             "main": "src/main.ts",

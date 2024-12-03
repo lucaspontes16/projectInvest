@@ -5,6 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { tap } from 'rxjs';
 import { LoginResponse } from '../types/login-response.type';
+import { Router } from '@angular/router';
 
 
 @Injectable({
@@ -13,13 +14,14 @@ import { LoginResponse } from '../types/login-response.type';
 export class LoginService {
   apiUrl: string = "http://localhost:8080/auth"
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient, private router: Router) { }
 
   login(email: string, password: string){
     return this.httpClient.post<LoginResponse>(this.apiUrl + "/login", { email, password }).pipe(
       tap((value) => {
         sessionStorage.setItem("auth-token", value.token)
         sessionStorage.setItem("username", value.name)
+         this.router.navigate(['/home']); // Redirect to home page after login
       })
     )
   }
@@ -29,6 +31,7 @@ export class LoginService {
       tap((value) => {
         sessionStorage.setItem("auth-token", value.token)
         sessionStorage.setItem("username", value.name)
+         this.router.navigate(['/home']); // Redirect to home page after login
       })
     )
   }

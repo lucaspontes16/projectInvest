@@ -1,20 +1,17 @@
 <main>
     <section class="form-section">
-        
+
         <h2>{{ title}}</h2>
         <ng-content></ng-content> <!-- todos os componentes da classe login.component e injetado nessa tag-->
         <div class="btn-wrapper">
-            <button class="btn-primary"
-            (click)="submit()"
-            [disabled]="disablePrimaryBtn"
-            >{{primaryBtnText}}
-        </button> <!--quando clicar no botao sera enviado para a funcao submit, que puxara a tela de login-->
+            <button class="btn-primary" (click)="submit()" [disabled]="disablePrimaryBtn">{{primaryBtnText}}
+            </button> <!--quando clicar no botao sera enviado para a funcao submit, que puxara a tela de login-->
             <div class="divider">
                 <div></div>
                 <span>or</span>
                 <div></div>
             </div>
-            <button class="btn-secondary"(click)="navigate()">{{secondaryBtnText}}</button>
+            <button class="btn-secondary" (click)="navigate()">{{secondaryBtnText}}</button>
         </div>
     </section>
     <section class="main-section">

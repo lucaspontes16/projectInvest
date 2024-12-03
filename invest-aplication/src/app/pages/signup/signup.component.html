@@ -1,49 +1,26 @@
-
 <!--tudo que e dinamico na pagina nos colocamos nessa pagina-->
 <!-- por exemplo colocamos os nomes dos textos e criamos a base do formulario para injetar na classe defaul-login-layout -->
-<app-default-login-layout
-title="Sign in and start today!"
-primaryBtnText="Signup now"
-secondaryBtnText="Login now"
-(submit)="submit()"
-(navigate)="navigate()"
-[disablePrimaryBtn]="!signupForm.valid"
->
-<form [formGroup]="signupForm">
-    <app-primary-input
-        formControlName="name"
-        inputName="name"
-        type="text"
-        label="Your name"
-        placeHolder="Jhon Doe">
+<app-default-login-layout title="Sign in and start today!" primaryBtnText="Signup now" secondaryBtnText="Login now"
+    (submit)="submit()" (navigate)="navigate()" [disablePrimaryBtn]="!signupForm.valid">
+    <form [formGroup]="signupForm">
+        <app-primary-input formControlName="name" inputName="name" type="text" label="Your name" placeHolder="Jhon Doe">
 
-        <img src="email-icon.svg" alt="email-icon">
-    </app-primary-input>
-    <app-primary-input
-        formControlName="email"
-        inputName="email"
-        type="email"
-        label="Email"
-        placeHolder="jhondoe@gmail.com">
+            <img src="email-icon.svg" alt="email-icon">
+        </app-primary-input>
+        <app-primary-input formControlName="email" inputName="email" type="email" label="Email"
+            placeHolder="jhondoe@gmail.com">
 
-        <img src="email-icon.svg" alt="email-icon">
-    </app-primary-input>
+            <img src="email-icon.svg" alt="email-icon">
+        </app-primary-input>
 
-    <app-primary-input
-        formControlName ="password"
-        inputName="password"
-        type="password"
-        label="Your Password">
+        <app-primary-input formControlName="password" inputName="password" type="password" label="Your Password">
 
-        <img src="password-icon.svg" alt="password-icon">
-    </app-primary-input>
-    <app-primary-input
-        formControlName ="passwordConfirm"
-        inputName="passwordConfirm"
-        type="password"
-        label="Confirm Your Password">
+            <img src="password-icon.svg" alt="password-icon">
+        </app-primary-input>
+        <app-primary-input formControlName="passwordConfirm" inputName="passwordConfirm" type="password"
+            label="Confirm Your Password">
 
-        <img src="password-icon.svg" alt="password-icon">
-    </app-primary-input>
-</form>
- </app-default-login-layout>
+            <img src="password-icon.svg" alt="password-icon">
+        </app-primary-input>
+    </form>
+</app-default-login-layout>
