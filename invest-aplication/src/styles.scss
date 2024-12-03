@@ -1,0 +1,23 @@
+
+@use 'ngx-toastr/toastr'; // regular style toast
+@import "~bootstrap/dist/css/bootstrap.min.css";
+// Importando as variáveis do Bootstrap (para customização)
+@import 'node_modules/bootstrap/scss/bootstrap';
+
+// Ou, se você preferir, pode importar diretamente o arquivo principal do Bootstrap:
+@import 'node_modules/bootstrap/dist/css/bootstrap.min.css';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Lato", sans-serif;
+}
+
+html,
+body {
+    height: 100%
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
