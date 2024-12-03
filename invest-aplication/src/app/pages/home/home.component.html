@@ -1,2 +1,78 @@
+<style>
+    /* Estilo base para os cartões */
+    .card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
 
-<h1>hello</h1>
+    /* Efeito de hover */
+    .card:hover {
+        transform: scale(1.05);
+        /* Aumenta levemente o tamanho */
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        /* Adiciona uma sombra para dar profundidade */
+    }
+</style>
+
+<div class="row g-0 overflow-hidden">
+    <!-- Card-News à esquerda -->
+    <div class="col-lg-6">
+        <div class="card-news lc-block">
+            <div class="new-card lc-block card card-cover h-100 overflow-hidden text-white bg-dark rounded-1 shadow-lg"
+                lc-helper="background"
+                style="background-image: url('https://images.unsplash.com/photo-1507499739999-097706ad8914?crop=entropy&amp;cs=tinysrgb&amp;fit=crop&amp;fm=jpg&amp;ixid=MnwzNzg0fDB8MXxzZWFyY2h8MTB8fHNwYWNlfGVufDB8MXx8fDE2MjE4NDQ2MTY&amp;ixlib=rb-1.2.1&amp;q=80&amp;w=1080&amp;h=768'); background-size:cover">
+                <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                    <div class="lc-block pt-5 mt-5 mb-4">
+                        <div editable="rich">
+                            <h2 class="display-6 lh-1 fw-bold">Short title, long jacket</h2>
+                            <p>Quickly design and customize responsive mobile-first sites with Bootstrap.</p>
+                        </div>
+                    </div>
+                    <ul class="lc-block d-flex list-unstyled mt-auto ms-auto">
+                        <a class="btn btn-link btn-sm text-white" href="#" role="button">Read more</a>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cards de Stocks e Currency à direita -->
+    <div class="cards-rigth col-lg-6">
+        <!-- Stocks Card -->
+        <div class="stocks-card lc-block mb-3">
+            <div class="lc-block card card-cover h-100 overflow-hidden text-white bg-dark rounded-1 shadow-lg"
+                lc-helper="background"
+                style="background:url(https://images.unsplash.com/photo-1444910958049-f45a1ac7ace5?crop=entropy&amp;amp;cs=tinysrgb&amp;amp;fit=crop&amp;amp;fm=jpg&amp;amp;ixid=MnwzNzg0fDB8MXxzZWFyY2h8MTA2fHxmbG93ZXJzfGVufDB8MHx8fDE2MjE1MDQwMjg&amp;amp;ixlib=rb-1.2.1&amp;amp;q=80&amp;amp;w=1080&amp;amp;h=76) center / cover no-repeat;">
+                <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                    <div class="lc-block pt-5 mt-5 mb-4">
+                        <div editable="rich">
+                            <h2 class="display-6 lh-1 fw-bold">Much longer title that wraps to multiple lines</h2>
+                            <p>Quickly design and customize responsive mobile-first sites with Bootstrap.</p>
+                        </div>
+                    </div>
+                    <ul class="lc-block d-flex list-unstyled mt-auto ms-auto">
+                        <a class="btn btn-link btn-sm text-white" href="#" role="button">Read more</a>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Currency Card -->
+        <div class="currency-card lc-block">
+            <div class="lc-block card card-cover h-100 overflow-hidden text-white bg-dark rounded-1 shadow-lg"
+                lc-helper="background"
+                style="background:url(https://images.unsplash.com/photo-1580133748682-099a97d17e6c?crop=entropy&amp;amp;cs=tinysrgb&amp;amp;fit=crop&amp;amp;fm=jpg&amp;amp;ixid=MnwzNzg0fDB8MXxzZWFyY2h8MTV8fGplbGx5JTIwZmlzaHxlbnwwfDB8fHwxNjIxNTA0MDU1&amp;amp;ixlib=rb-1.2.1&amp;amp;q=80&amp;amp;w=1080&amp;amp;h=768) center / cover no-repeat;">
+                <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                    <div class="lc-block pt-5 mt-5 mb-4">
+                        <div editable="rich">
+                            <h2 class="display-6 lh-1 fw-bold">Another longer title belongs here</h2>
+                            <p>Quickly design and customize responsive mobile-first sites with Bootstrap.</p>
+                        </div>
+                    </div>
+                    <ul class="lc-block d-flex list-unstyled mt-auto ms-auto">
+                        <a class="btn btn-link btn-sm text-white" href="#" role="button">Read more</a>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
