@@ -1,0 +1,19 @@
+.new-card {
+    padding: 3rem 0;
+    margin: 2rem 0px;
+    width: 100%; // Deixa o Bootstrap controlar a largura
+    height: auto; // Ajusta a altura automaticamente
+    border-radius: 0px;
+    margin: 5rem 0px;
+
+    // Regras específicas para telas grandes
+    @media (min-width: 992px) {
+        width: 41rem; // Redefine largura para telas grandes
+        height: 58rem;
+        
+    }
+
+    .new-card {
+        height: 44rem !important; // Manter ajuste apenas onde necessário
+    }
+}

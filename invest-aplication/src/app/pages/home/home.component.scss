@@ -1,30 +1,36 @@
-// Remove posicionamento estático para não quebrar responsividade
-.card-news {
-    padding: 3rem 0;
-    margin: 1rem;
-    width: 100%; // Deixa o Bootstrap controlar a largura
-    height: auto; // Ajusta a altura automaticamente
-    border-radius: 0px;
-
-    // Regras específicas para telas grandes
-    @media (min-width: 992px) {
-        width: 41rem; // Redefine largura para telas grandes
-        height: 58rem;
-        margin-left: 16rem;
-    }
-
-    .new-card {
-        height: 44rem !important; // Manter ajuste apenas onde necessário
-    }
+/* Ajusta o layout dos cards */
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-// Ajuste responsivo para o container da direita
-.rigth-cards {
-    padding: 2rem 0; // Ajusta espaçamento globalmente
-    width: 100%; // Garantir que a largura seja dinâmica
+/* Efeito de hover */
+.card:hover {
+    transform: scale(1.05);
+    /* Aumenta levemente o tamanho */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    /* Adiciona uma sombra para dar profundidade */
+}
 
-    @media (min-width: 992px) {
-        width: 46rem; // Largura para telas grandes
-        padding: 4rem 0;
-    }
+.news-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+}
+
+/* Ajustes para os cards à esquerda */
+.new-card {
+    height: 44rem !important;
+    /* Manter ajuste apenas onde necessário */
+}
+
+/* Ajustes para cards à direita */
+.right-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.right-cards .card {
+    margin-bottom: 20px;
 }
