@@ -2,10 +2,11 @@ import { Routes } from '@angular/router';
 import { LoginComponent } from './pages/login/login.component';
 import { SignUpComponent } from './pages/signup/signup.component';
 import { HomeComponent } from './pages/home/home.component';
+import { StockPageComponent } from './pages/stock-page/stock-page.component'; // Adicionei o import do StockPageComponent
 import { AuthGuard } from './services/auth-guard.service';
 import { DefaultLoginLayoutComponent } from './components/default-login-layout/default-login-layout.component';
-import { AppComponent } from './app.component';
 import { MainLayoutComponent } from './components/main-layout/main-layout.component';
+import { AppComponent } from './app.component';
 
 export const routes: Routes = [
   // Rotas públicas (sem header/menu)
@@ -25,9 +26,10 @@ export const routes: Routes = [
     component: MainLayoutComponent, // Layout principal com header/menu
     children: [
       { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
+      { path: 'stocks', component: StockPageComponent, canActivate: [AuthGuard] }, // Adicionando StockPageComponent
     ],
   },
 
   // Rota curinga
-  { path: '**', redirectTo: '' },
+  { path: '**', redirectTo: 'login' }, // Redireciona para a página de login
 ];
