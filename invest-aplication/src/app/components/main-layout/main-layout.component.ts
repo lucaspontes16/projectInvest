@@ -5,7 +5,7 @@ import { FooterComponent } from "../../shared-components/footer/footer.component
 
 @Component({
   selector: 'app-main-layout',
-  standalone: true,  // Indica que é um componente independente
+  standalone: true,  // Independent component 
   imports: [RouterOutlet, NavbarComponent, FooterComponent],
   templateUrl: './main-layout.component.html', 
   styleUrls: ['./main-layout.component.scss'],

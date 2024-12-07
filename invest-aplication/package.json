@@ -30,6 +30,7 @@
     "cors": "^2.8.5",
     "karma-coverage-istanbul-reporter": "^3.0.3",
     "ng-apexcharts": "^1.15.0",
+    "ng2-charts": "^7.0.0",
     "ngx-scrollbar": "^16.1.1",
     "ngx-toastr": "^19.0.0",
     "package.json": "^0.0.0",

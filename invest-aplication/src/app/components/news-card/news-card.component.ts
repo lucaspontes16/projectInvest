@@ -5,8 +5,8 @@ import { CommonModule } from '@angular/common';
   selector: 'app-news-card',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './news-card.component.html',  // Importando o HTML
-  styleUrls: ['./news-card.component.scss'], // Importando o SCSS
+  templateUrl: './news-card.component.html',  // HTML import 
+  styleUrls: ['./news-card.component.scss'], // SCSS import 
 })
 export class NewsCardComponent {
   @Input() article: any;

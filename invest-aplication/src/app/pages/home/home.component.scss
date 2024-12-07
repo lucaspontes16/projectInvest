@@ -1,14 +1,14 @@
-/* Ajusta o layout dos cards */
+/* layout cards adjusts */
 .card {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Efeito de hover */
+/* Hover Card Effect */
 .card:hover {
     transform: scale(1.05);
-    /* Aumenta levemente o tamanho */
+    /* gown the size*/
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-    /* Adiciona uma sombra para dar profundidade */
+    /* Shadow added  */
 }
 
 .news-container {
@@ -18,13 +18,13 @@
     justify-content: center;
 }
 
-/* Ajustes para os cards à esquerda */
+/* Card left adjustment  */
 .new-card {
     height: 44rem !important;
-    /* Manter ajuste apenas onde necessário */
+    /* Keeps cards adjustment wheres necessary*/
 }
 
-/* Ajustes para cards à direita */
+/* Card left adjustment */
 .right-cards {
     display: flex;
     flex-direction: column;

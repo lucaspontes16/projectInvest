@@ -7,6 +7,9 @@ import { AuthGuard } from './services/auth-guard.service';
 import { DefaultLoginLayoutComponent } from './components/default-login-layout/default-login-layout.component';
 import { MainLayoutComponent } from './components/main-layout/main-layout.component';
 import { AppComponent } from './app.component';
+import { NewsPageComponent } from './pages/news-page/news-page.component';
+
+
 
 export const routes: Routes = [
   // Rotas públicas (sem header/menu)
@@ -17,6 +20,7 @@ export const routes: Routes = [
       { path: '', redirectTo: 'login', pathMatch: 'full' },
       { path: 'login', component: LoginComponent },
       { path: 'signup', component: SignUpComponent },
+      
     ],
   },
 
@@ -27,6 +31,8 @@ export const routes: Routes = [
     children: [
       { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
       { path: 'stocks', component: StockPageComponent, canActivate: [AuthGuard] }, // Adicionando StockPageComponent
+      { path: 'stocks/:symbol', component: StockPageComponent, canActivate:[AuthGuard] },
+      { path: 'news-page', component: NewsPageComponent, canActivate: [AuthGuard] },
     ],
   },
 

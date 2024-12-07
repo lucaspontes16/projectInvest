@@ -1,13 +1,13 @@
 <div class="container">
     <div class="row g-0">
 
-        <!-- Card de Notícias à esquerda -->
+        <!-- Left Card-news -->
         <div class="col-lg-6">
             <app-news-card *ngIf="newsArticles.length > 1" [article]="newsArticles[1]">
             </app-news-card>
         </div>
 
-        <!-- Cards de Stocks e Currency à direita -->
+        <!-- Stock and currency card right  -->
         <div class="col-lg-6 d-flex flex-column">
             <!-- Stocks Card -->
             <div class="stocks-card mb-3">

@@ -6,9 +6,9 @@ import { NewsCardComponent } from 'src/app/components/news-card/news-card.compon
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, NewsCardComponent], // Certificando-se de que o NewsCardComponent está importado
-  templateUrl: './home.component.html', // Usando o template HTML
-  styleUrls: ['./home.component.scss'], // Usando o SCSS
+  imports: [CommonModule, NewsCardComponent], // Certify that the modules are imported 
+  templateUrl: './home.component.html', // Using HTML template 
+  styleUrls: ['./home.component.scss'], // Using SCSS template 
 })
 export class HomeComponent implements OnInit {
   newsArticles: any[] = [];
@@ -18,7 +18,7 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.newsService.getInvestmentNews().subscribe({
       next: (data) => {
-        console.log('Data received:', data); // Adicionei o console.log para verificar os dados
+        console.log('Data received:', data); // console.log added to data verify 
         this.newsArticles = data.articles;
       },
       error: (err) => console.error('Erro ao carregar notícias', err),
