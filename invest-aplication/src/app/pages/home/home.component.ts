@@ -21,7 +21,7 @@ export class HomeComponent implements OnInit {
         console.log('Data received:', data); // console.log added to data verify 
         this.newsArticles = data.articles;
       },
-      error: (err) => console.error('Erro ao carregar notícias', err),
+      error: (err) => console.error('Error loading news', err),
     });
   }
 }

@@ -14,6 +14,7 @@
     background-color: $button-color;
     height: 48px;
     border-radius: 0;
+    font-size: 22px;
 
 }
 
@@ -28,6 +29,8 @@
     background: 0 0;
     border: 0;
     transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
+    
+    
 }
 
 //sidebar logo
@@ -40,4 +43,21 @@
 .logo-toolbar {
     width: 80px;
     height: 80px;
+}
+.navbar-nav{
+    font-size: 22px;
+    gap: 15px;
+}
+
+a{
+    text-decoration: none;
+    color: $bar-textcolor;
+    
+    
+}
+
+a:hover,
+a:focus {
+    color: #333;
+    
 }

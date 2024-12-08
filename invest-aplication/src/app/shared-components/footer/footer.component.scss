@@ -1,9 +1,64 @@
-.gap-2 {
-    gap: 2.5rem !important;
+/* Estilo para o footer */
+.footer {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    /* Ocupa a largura total */
+    padding: 2rem 0;
+    /* Espaçamento no topo e no fundo */
+
+    text-align: center;
+    /* Centraliza o texto */
 }
 
-.footer{
-    position: absolute;
-    left: 285px;
+.footer .nav-link {
+    color: #6c757d;
+    /* Cor do texto dos links */
+    text-decoration: none;
+}
+
+.footer .nav-link:hover {
+    color: #495057;
+    /* Cor ao passar o mouse nos links */
+}
+
+.footer .text-muted {
+    font-size: 0.875rem;
+    /* Fonte menor para o copyright */
+    color: #6c757d;
+    /* Cor do texto de copyright */
+}
+
+@media (max-width: 768px) {
+
+    /* Em telas pequenas, ajustar o layout */
+    .footer {
+        padding: 1rem 0;
+    }
+
+    .footer .nav-link {
+        font-size: 0.875rem;
+    }
+}
+
+@media (min-width: 992px) {
+
+    /* Em telas grandes, o menu de links ficará mais espaçado */
+    .footer .nav-link {
+        font-size: 1rem;
+    }
+}
+
+/* Ajuste do espaçamento entre os itens do menu */
+.gap-2 {
+    gap: 1.5rem !important;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     
+    /* Garante que o footer fique no final da página */
 }

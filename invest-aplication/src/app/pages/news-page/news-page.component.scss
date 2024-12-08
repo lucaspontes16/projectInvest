@@ -1,0 +1,38 @@
+// .news-page-container {
+//     .news-page-card {
+//         width: 80rem!important;
+//     }
+// }
+
+/* Ajuste específico para os cards na news-page */
+.news-page-card {
+    height: 15rem !important;
+    /* Ajuste da altura desejada para os cards */
+    width: 100% !important;
+    /* Garante que o card ocupe a largura total disponível */
+    padding: 0 0 !important;
+
+    /* Regras para quando a tela for grande */
+    @media (min-width: 992px) {
+        height: 21rem !important;
+        /* Aumenta um pouco a altura em telas grandes, se necessário */
+    }
+
+    /* Regras para quando a tela for pequena */
+    @media (max-width: 576px) {
+        height: 20rem !important;
+        /* Diminui a altura para telas pequenas */
+    }
+
+        @media (min-width: 1400px) {
+    
+            .container,
+            .container-lg,
+            .container-md,
+            .container-sm,
+            .container-xl,
+            .container-xxl {
+                max-width: 80%;
+            }
+        }
+}

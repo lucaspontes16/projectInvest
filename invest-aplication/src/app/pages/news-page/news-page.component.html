@@ -1,10 +1,16 @@
-<div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh;">
-    <div class="row row-cols-1 g-0">
-        <div class="col">
-            <app-news-card *ngIf="newsArticles.length > 3" [article]="newsArticles[3]"></app-news-card>
-            <app-news-card *ngIf="newsArticles.length > 3" [article]="newsArticles[3]"></app-news-card>
-            <app-news-card *ngIf="newsArticles.length > 3" [article]="newsArticles[3]"></app-news-card>
-            <app-news-card *ngIf="newsArticles.length > 3" [article]="newsArticles[3]"></app-news-card>
+<section>
+    <div class="news-page-container container py-6 text-center">
+        <div class="row row-cols-1 g-0">
+            <div class="col">
+                <app-news-card *ngIf="newsArticles.length > 3" [article]="newsArticles[3]" class="news-page-card" >
+                </app-news-card>
+                <app-news-card *ngIf="newsArticles.length > 3" [article]="newsArticles[4]" class="news-page-card">
+                </app-news-card>
+                <app-news-card *ngIf="newsArticles.length > 3" [article]="newsArticles[5]" class="news-page-card">
+                </app-news-card>
+                <app-news-card *ngIf="newsArticles.length > 3" [article]="newsArticles[6]" class="news-page-card">
+                </app-news-card>
+            </div>
         </div>
     </div>
-</div>
+</section>

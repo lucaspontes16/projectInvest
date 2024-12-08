@@ -10,21 +10,48 @@
     /* Adiciona uma sombra para dar profundidade */
 }
 .new-card {
-    padding: 3rem 0;
-    margin: 2rem 0px;
-    width: 100%; // Deixa o Bootstrap controlar a largura
+    
+    margin: 2rem 0;
+    width: 95%; // Deixa o Bootstrap controlar a largura
     height: auto; // Ajusta a altura automaticamente
     border-radius: 0px;
-    margin: 5rem 0px;
+    //margin: 5rem 0px;
 
     // Regras específicas para telas grandes
     @media (min-width: 992px) {
-        width: 41rem; // Redefine largura para telas grandes
+        width: 95%; // Redefine largura para telas grandes
         height: 58rem;
         
     }
-
-    .new-card {
+        //for specific height components of a fixed height 
+        &.fixed-height {
         height: 44rem !important; // Manter ajuste apenas onde necessário
     }
 }
+
+:host {
+    width: auto;
+    /* Permite personalização externa */
+    display: block;
+    /* Garante que largura e altura se ajustem ao container */
+}
+
+.new-card {
+    width: auto;
+    /* Impede conflitos com a largura do container */
+}
+
+.card-left{
+    height: 1rem;
+}
+
+.card-left.d-flex {
+    height: 152px;
+    display: flex !important;
+}
+
+
+// width: 93%;
+// height: 130%;
+// padding: 29px;
+// margin: 0px;

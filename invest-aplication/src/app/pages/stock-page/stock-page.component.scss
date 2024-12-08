@@ -1,14 +1,3 @@
-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-th,
-td {
-    padding: 10px;
-    border: 1px solid #ddd;
-}
-
 .positive {
     color: green;
 }
@@ -17,10 +6,43 @@ td {
     color: red;
 }
 
+.stock-page-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
 .search-bar input {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 5px;
+}
+
+.search-bar button {
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+.stock-page-container[_ngcontent-ng-c883096707] {
+    max-width: 51%;
+    margin: 5% auto;
+    height: 100%;
+}
+
+@media (min-width: 1200px) {
+
+    .h1,
+    h1 {
+        font-size: 2.5rem;
+        margin-bottom: 3rem;
+    }
+}
+
+.stock-page-container[_ngcontent-ng-c444709101] {
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 100%;
+}
+
+.mx-auto {
+    margin-right: auto !important;
+    margin-left: auto !important;
+    display: contents;
 }

@@ -10,4 +10,7 @@ import { CommonModule } from '@angular/common';
 })
 export class NewsCardComponent {
   @Input() article: any;
+  @Input() isFixedHeight: boolean = false; 
+  @Input() customWidth: string = '100%';
+  
 }

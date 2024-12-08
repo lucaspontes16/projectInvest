@@ -1,7 +1,8 @@
 <div class="lc-block">
     <div class="new-card lc-block card card-cover h-100 overflow-hidden text-white bg-dark rounded-1 shadow-lg"
+    
         [style.backgroundImage]="'url(' + (article.urlToImage || 'default.jpg') + ')'" style="background-size: cover">
-        <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+        <div class="card-left d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
             <div class="lc-block pt-5 mt-5 mb-4">
                 <div editable="rich">
                     <h2 class="display-6 lh-1 fw-bold">{{ article.title }}</h2>
