@@ -1,7 +1,13 @@
 .currency-comparison-container {
+    .my-5 {
+    margin-top: 3rem !important;
+    margin-bottom: 3rem !important;
+    height: 78%;
+}
     .form-select {
         font-size: 1rem;
     }
+    
 
     button {
         font-size: 1rem;
@@ -28,4 +34,10 @@
             }
         }
     }
+}
+
+.my-5 {
+    margin-top: 14% !important;
+    margin-bottom: 3rem !important;
+    height: 58%;
 }
