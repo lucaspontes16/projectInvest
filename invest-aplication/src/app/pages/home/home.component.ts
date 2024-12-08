@@ -2,11 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { NewsService } from 'src/app/services/news.service';
 import { CommonModule } from '@angular/common';
 import { NewsCardComponent } from 'src/app/components/news-card/news-card.component';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, NewsCardComponent], // Certify that the modules are imported 
+  imports: [CommonModule, NewsCardComponent, RouterLink], // Certify that the modules are imported 
   templateUrl: './home.component.html', // Using HTML template 
   styleUrls: ['./home.component.scss'], // Using SCSS template 
 })

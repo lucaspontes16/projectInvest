@@ -5,6 +5,8 @@
         <div class="col-lg-6">
             <app-news-card class="card-home" *ngIf="newsArticles.length > 1" [article]="newsArticles[1]">
             </app-news-card>
+            <button type="button" class="btn-news btn btn-light" [routerLink]="['/news-page']">News</button>
+
         </div>
 
         <!-- Stock and currency card right  -->
@@ -12,12 +14,12 @@
             <!-- Stocks Card -->
             <div class="stocks-card mb-3">
                 <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-1 shadow-lg"
-                    style="background-image: url('https://images.unsplash.com/photo-1444910958049-f45a1ac7ace5?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&ixid=MnwzNzg0fDB8MXxzZWFyY2h8MTA2fHxmbG93ZXJzfGVufDB8MHx8fDE2MjE1MDQwMjg&ixlib=rb-1.2.1&q=80&w=1080&h=76');">
+                    style="background-image: url('https://img.freepik.com/free-vector/gradient-stock-market-concept_52683-76908.jpg?t=st=1733683916~exp=1733687516~hmac=89c8a80bc80890c360c4d22c8fe1b765bf5a5a7071a9dd0c90ad39cf8e99176d&w=1480');">
                     <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
-                        <h2 class="display-6 lh-1 fw-bold">Much longer title that wraps to multiple lines</h2>
-                        <p>Quickly design and customize responsive mobile-first sites with Bootstrap.</p>
+                        <h2 class="display-6 lh-1 fw-bold">Stay updated on the stock market</h2>
+                        <p>Find and monitore your favorites stock investment options.</p>
                         <ul class="list-unstyled mt-auto ms-auto">
-                            <a class="btn btn-link btn-sm text-white" href="#" role="button">Read more</a>
+                            <a class="btn btn-link btn-sm text-white" [routerLink]="['/stocks']" role="button">Find More</a>
                         </ul>
                     </div>
                 </div>

@@ -21,7 +21,7 @@
 }
 
 .stock-page-container[_ngcontent-ng-c883096707] {
-    max-width: 51%;
+    max-width: 80%;
     margin: 5% auto;
     height: 100%;
 }
@@ -45,4 +45,10 @@
     margin-right: auto !important;
     margin-left: auto !important;
     display: contents;
+}
+
+.stock-page-container[_ngcontent-ng-c1634756699] {
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 78%;
 }
