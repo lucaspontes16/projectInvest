@@ -1,0 +1,36 @@
+<div class="container my-5">
+    <h1 class="text-center mb-4">Currency Comparison</h1>
+
+    <!-- Seleção de moedas -->
+    <div class="row mb-3">
+        <div class="col-md-5">
+            <label for="baseCurrency">Base Currency</label>
+            <select [(ngModel)]="baseCurrency" class="form-select" [disabled]="isLoading">
+                <option *ngFor="let currency of currencies" [value]="currency">{{ currency }}</option>
+            </select>
+        </div>
+        <div class="col-md-5">
+            <label for="targetCurrency">Target Currency</label>
+            <select [(ngModel)]="targetCurrency" class="form-select" [disabled]="isLoading">
+                <option *ngFor="let currency of currencies" [value]="currency">{{ currency }}</option>
+            </select>
+        </div>
+        <div class="col-md-2 d-flex align-items-end">
+            <button (click)="compareCurrencies()" class="btn btn-primary w-100" [disabled]="isLoading">
+                <span *ngIf="isLoading" class="spinner-border spinner-border-sm" role="status"
+                    aria-hidden="true"></span>
+                Compare
+            </button>
+        </div>
+    </div>
+
+    <!-- Exibir resultado -->
+    <div *ngIf="exchangeRate !== null" class="alert alert-success text-center">
+        1 {{ baseCurrency }} = {{ exchangeRate | number: '1.2-2' }} {{ targetCurrency }}
+    </div>
+
+    <!-- Mensagem de erro -->
+    <div *ngIf="errorMessage" class="alert alert-danger text-center">
+        {{ errorMessage }}
+    </div>
+</div>

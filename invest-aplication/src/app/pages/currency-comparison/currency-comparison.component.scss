@@ -1,0 +1,31 @@
+.currency-comparison-container {
+    .form-select {
+        font-size: 1rem;
+    }
+
+    button {
+        font-size: 1rem;
+    }
+
+    .spinner-border {
+        margin-right: 10px;
+    }
+
+    @media (max-width: 767px) {
+        .row {
+
+            .col-md-5,
+            .col-md-2 {
+                margin-bottom: 15px;
+            }
+
+            .col-md-5 {
+                max-width: 100%;
+            }
+
+            .col-md-2 {
+                max-width: 100%;
+            }
+        }
+    }
+}

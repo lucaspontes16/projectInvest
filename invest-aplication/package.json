@@ -25,6 +25,7 @@
     "@coreui/coreui": "^5.2.0",
     "@coreui/icons-angular": "^5.3.2",
     "apexcharts": "^4.1.0",
+    "axios": "^1.7.9",
     "bootstrap": "^5.3.3",
     "chart.js": "^4.4.7",
     "cors": "^2.8.5",

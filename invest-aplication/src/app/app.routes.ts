@@ -8,6 +8,7 @@ import { DefaultLoginLayoutComponent } from './components/default-login-layout/d
 import { MainLayoutComponent } from './components/main-layout/main-layout.component';
 import { AppComponent } from './app.component';
 import { NewsPageComponent } from './pages/news-page/news-page.component';
+import { CurrencyComparisonComponent } from './pages/currency-comparison/currency-comparison.component';
 
 
 
@@ -33,6 +34,7 @@ export const routes: Routes = [
       { path: 'stocks', component: StockPageComponent, canActivate: [AuthGuard] }, // Adicionando StockPageComponent
       { path: 'stocks/:symbol', component: StockPageComponent, canActivate:[AuthGuard] },
       { path: 'news-page', component: NewsPageComponent, canActivate: [AuthGuard] },
+      { path: 'currency-comparison', component: CurrencyComparisonComponent, canActivate: [AuthGuard] },
     ],
   },
 
