@@ -1,47 +1,60 @@
-
-//pagina de controle de logica para o enviar as requisicoes e pegar o retorno do backend e salvar o token do usuario
-
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { tap } from 'rxjs';
 import { LoginResponse } from '../types/login-response.type';
 import { Router } from '@angular/router';
 
-
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class LoginService {
-  apiUrl: string = "http://localhost:8080/auth"
+  private readonly apiUrl: string = 'http://localhost:8080/auth';
 
-  constructor(private httpClient: HttpClient, private router: Router) { }
+  constructor(private httpClient: HttpClient, private router: Router) {}
 
-  login(email: string, password: string){
-    return this.httpClient.post<LoginResponse>(this.apiUrl + "/login", { email, password }).pipe(
-      tap((value) => {
-        sessionStorage.setItem("auth-token", value.token)
-        sessionStorage.setItem("username", value.name)
-         this.router.navigate(['/home']); // Redirect to home page after login
-      })
-    )
+  login(email: string, password: string) {
+    return this.httpClient
+      .post<LoginResponse>(`${this.apiUrl}/login`, { email, password })
+      .pipe(
+        tap((response) => {
+          this.saveSession(response);
+          this.router.navigate(['/home']); // Redirect to home page after login
+        })
+      );
   }
 
-  signup(name: string, email: string, password: string){
-    return this.httpClient.post<LoginResponse>(this.apiUrl + "/register", { name, email, password }).pipe(
-      tap((value) => {
-        sessionStorage.setItem("auth-token", value.token)
-        sessionStorage.setItem("username", value.name)
-         this.router.navigate(['/home']); // Redirect to home page after login
-      })
-    )
+  signup(name: string, email: string, password: string) {
+    return this.httpClient
+      .post<LoginResponse>(`${this.apiUrl}/register`, { name, email, password })
+      .pipe(
+        tap((response) => {
+          this.saveSession(response);
+          this.router.navigate(['/home']); // Redirect to home page after signup
+        })
+      );
   }
+
   logout(): void {
-    sessionStorage.removeItem('auth-token');
-    sessionStorage.removeItem('username');
+    this.clearSession();
     this.router.navigate(['/login']); // Redirect to login page after logout
   }
 
   isAuthenticated(): boolean {
     return !!sessionStorage.getItem('auth-token');
+  }
+
+  private saveSession(response: LoginResponse): void {
+    sessionStorage.setItem('auth-token', response.token);
+    sessionStorage.setItem('username', response.name);
+
+    // Verifica se 'role' está presente na resposta e armazena ela no sessionStorage
+    const role = response.role ?? 'user';  // Se role não estiver presente, define como 'user' por padrão
+    sessionStorage.setItem('role', role);
+  }
+
+  private clearSession(): void {
+    sessionStorage.removeItem('auth-token');
+    sessionStorage.removeItem('username');
+    sessionStorage.removeItem('role');
   }
 }

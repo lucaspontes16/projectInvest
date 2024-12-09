@@ -35,8 +35,11 @@ export const routes: Routes = [
       { path: 'stocks', component: StockPageComponent, canActivate: [AuthGuard] }, // Adicionando StockPageComponent
       { path: 'stocks/:symbol', component: StockPageComponent, canActivate:[AuthGuard] },
       { path: 'news-page', component: NewsPageComponent, canActivate: [AuthGuard] },
-      { path: 'currency-comparison', component: CurrencyComparisonComponent, canActivate: [AuthGuard] },
       { path: 'about', component: AboutComponent, canActivate: [AuthGuard] },
+      { path: 'currency-comparison', 
+        component: CurrencyComparisonComponent, 
+        canActivate: [AuthGuard],
+        data:{role:'admin'} }, //only admin can access to this page 
     ],
   },
 
