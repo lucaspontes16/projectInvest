@@ -8,6 +8,7 @@ import com.example.invest_app_backend.infra.security.TokenService;
 import com.example.invest_app_backend.reposritories.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
@@ -23,31 +24,52 @@ public class AuthController {
     private final TokenService tokenService;
 
     @PostMapping("/login")
-    public ResponseEntity login(@RequestBody LoginRequestDTO body){
-        User user = this.repository.findByEmail(body.email()).orElseThrow(() -> new RuntimeException("User not found"));
-        if(passwordEncoder.matches(body.password(), user.getPassword())) {
-            String token = this.tokenService.generateToken(user);
-            return ResponseEntity.ok(new ResponseDTO(user.getName(), token));
-        }
-        return ResponseEntity.badRequest().build();
-    }
+    public ResponseEntity<ResponseDTO> login(@RequestBody LoginRequestDTO body) {
+        User user = repository.findByEmail(body.email())
+                .orElseThrow(() -> new RuntimeException("User not found"));
 
+        if (passwordEncoder.matches(body.password(), user.getPassword())) {
+            String token = tokenService.generateToken(user);
+            // Incluindo role no response
+            return ResponseEntity.ok(new ResponseDTO(user.getName(), token, user.getRole()));
+        }
+
+        return ResponseEntity.badRequest().body(new ResponseDTO("Invalid credentials", null, null));
+    }
 
     @PostMapping("/register")
-    public ResponseEntity register(@RequestBody RegisterRequestDTO body){
+    public ResponseEntity<ResponseDTO> register(@RequestBody RegisterRequestDTO body) {
         Optional<User> user = this.repository.findByEmail(body.email());
 
-        if(user.isEmpty()) {
-            User newUser = new User();
-            newUser.setPassword(passwordEncoder.encode(body.password()));
-            newUser.setEmail(body.email());
-            newUser.setName(body.name());
-            this.repository.save(newUser);
-
-            String token = this.tokenService.generateToken(newUser);
-            return ResponseEntity.ok(new ResponseDTO(newUser.getName(), token));
+        if (user.isPresent()) {
+            return ResponseEntity.badRequest().body(new ResponseDTO("Email already in use", null, null));
         }
-        return ResponseEntity.badRequest().build();
+
+        User newUser = new User();
+        newUser.setPassword(passwordEncoder.encode(body.password()));
+        newUser.setEmail(body.email());
+        newUser.setName(body.name());
+        //  'user' defined as default
+        newUser.setRole("user");
+        this.repository.save(newUser);
+
+        String token = this.tokenService.generateToken(newUser);
+        return ResponseEntity.ok(new ResponseDTO(newUser.getName(), token, newUser.getRole()));
+    }
+
+    @PostMapping("/create-admin")
+    @PreAuthorize("hasRole('admin')")
+    public ResponseEntity<ResponseDTO> createAdmin(@RequestBody RegisterRequestDTO body) {
+        User newUser = new User();
+        newUser.setPassword(passwordEncoder.encode(body.password()));
+        newUser.setEmail(body.email());
+        newUser.setName(body.name());
+        newUser.setRole("admin"); // admin role
+        this.repository.save(newUser);
+
+        String token = tokenService.generateToken(newUser);
+        return ResponseEntity.ok(new ResponseDTO(newUser.getName(), token, newUser.getRole()));
     }
 }
+
 

@@ -36,6 +36,7 @@ public class SecurityConfig {
                 .authorizeRequests(authorize -> authorize
                         .requestMatchers(HttpMethod.POST, "/auth/login").permitAll()  // Allow login route
                         .requestMatchers(HttpMethod.POST, "/auth/register").permitAll()  // Allow register route
+                        .requestMatchers("/currency-comparison").hasRole("ADMIN")
                         .anyRequest().authenticated()  // Require authentication for other requests
                 )
                 .addFilterBefore(securityFilter, UsernamePasswordAuthenticationFilter.class)
