@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { LoginService } from 'src/app/services/login.service';
 
 
 
@@ -11,5 +12,10 @@ import { RouterModule } from '@angular/router';
   styleUrl: './navbar.component.scss'
 })
 export class NavbarComponent {
+     constructor(private loginService: LoginService) {}
+
+  logout(): void {
+    this.loginService.logout();
+  }
 
 }

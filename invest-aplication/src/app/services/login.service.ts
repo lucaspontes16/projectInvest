@@ -35,4 +35,13 @@ export class LoginService {
       })
     )
   }
+  logout(): void {
+    sessionStorage.removeItem('auth-token');
+    sessionStorage.removeItem('username');
+    this.router.navigate(['/login']); // Redirect to login page after logout
+  }
+
+  isAuthenticated(): boolean {
+    return !!sessionStorage.getItem('auth-token');
+  }
 }
