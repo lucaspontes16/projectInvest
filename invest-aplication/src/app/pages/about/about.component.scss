@@ -1,0 +1,30 @@
+@use "../../../styles/variables.scss" as *;
+
+.about{
+    font-family: "Lato", sans-serif;
+}
+.py-4 {
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
+    font-family: "Lato", sans-serif;
+    font-size: 19px;
+    text-align: justify;
+    height: 78%;
+    
+    display: flex;
+    align-items: center;
+
+}
+.image{
+width: 411px;
+    margin: 2%;
+}
+
+.title{
+width: 251px;
+}
+
+.pragraph{
+    width: 251px;
+
+}

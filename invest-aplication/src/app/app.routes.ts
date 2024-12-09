@@ -9,6 +9,7 @@ import { MainLayoutComponent } from './components/main-layout/main-layout.compon
 import { AppComponent } from './app.component';
 import { NewsPageComponent } from './pages/news-page/news-page.component';
 import { CurrencyComparisonComponent } from './pages/currency-comparison/currency-comparison.component';
+import { AboutComponent } from './pages/about/about.component';
 
 
 
@@ -35,6 +36,7 @@ export const routes: Routes = [
       { path: 'stocks/:symbol', component: StockPageComponent, canActivate:[AuthGuard] },
       { path: 'news-page', component: NewsPageComponent, canActivate: [AuthGuard] },
       { path: 'currency-comparison', component: CurrencyComparisonComponent, canActivate: [AuthGuard] },
+      { path: 'about', component: AboutComponent, canActivate: [AuthGuard] },
     ],
   },
 
