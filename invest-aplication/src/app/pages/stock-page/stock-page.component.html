@@ -1,8 +1,8 @@
 <div class="stock-page-container container my-5">
-    <!-- Título -->
+    <!-- Title -->
     <h1 class="text-left mb-4">Popular Stocks</h1>
     
-    <!-- Entrada de busca -->
+    <!-- Search input -->
     <div class="row mb-4">
         <div class="col-md-8 mx-auto">
             <div class="input-group">
@@ -12,12 +12,12 @@
         </div>
     </div>
 
-    <!-- Mensagem de erro -->
+    <!-- Error message -->
     <div *ngIf="errorMessage" class="alert alert-danger text-center">
         {{ errorMessage }}
     </div>
 
-    <!-- Lista de ações populares -->
+    <!-- Popular stocks -->
     <div>
         <h2 class="text-center mb-3">Examples</h2>
         <ul class="list-group">
@@ -28,7 +28,7 @@
         </ul>
     </div>
 
-    <!-- Resultados da busca -->
+    <!-- Search results -->
     <div *ngIf="searchResults.length > 0" class="mt-5">
         <h2 class="text-center mb-4">Search Results</h2>
         <div class="table-responsive">

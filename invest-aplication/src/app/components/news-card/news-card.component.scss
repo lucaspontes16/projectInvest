@@ -2,43 +2,43 @@
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Efeito de hover */
+/* hover effect */
 .card:hover {
     transform: scale(1.05);
-    /* Aumenta levemente o tamanho */
+    /* size grows gradually */
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-    /* Adiciona uma sombra para dar profundidade */
+    /* Adds shadow */
 }
 .new-card {
     
     margin: 2rem 0;
-    width: 95%; // Deixa o Bootstrap controlar a largura
-    height: auto; // Ajusta a altura automaticamente
+    width: 95%; // allows Bootstrap controls the width 
+    height: auto; // Automatically adjusts the heightness 
     border-radius: 0px;
     //margin: 5rem 0px;
 
-    // Regras específicas para telas grandes
+    // Specific rules to big screens 
     @media (min-width: 992px) {
-        width: 95%; // Redefine largura para telas grandes
+        width: 95%; 
         height: 58rem;
         
     }
         //for specific height components of a fixed height 
         &.fixed-height {
-        height: 44rem !important; // Manter ajuste apenas onde necessário
+        height: 44rem !important; // Keeps the adjustment where is necessary 
     }
 }
 
 :host {
     width: auto;
-    /* Permite personalização externa */
+    /* External style*/
     display: block;
-    /* Garante que largura e altura se ajustem ao container */
+    
 }
 
 .new-card {
     width: auto;
-    /* Impede conflitos com a largura do container */
+   
 }
 
 .card-left{

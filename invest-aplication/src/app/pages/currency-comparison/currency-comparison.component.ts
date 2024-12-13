@@ -25,9 +25,9 @@ export class CurrencyComparisonComponent implements OnInit {
   // Obter a lista de moedas disponíveis
   this.currencyApiService.getCurrencies().subscribe({
     next: (data) => {
-      console.log('API Response (Currencies):', data); // Verifique a resposta no console do navegador
+      console.log('API Response (Currencies):', data); // API response on the browser 
       if (data && data.conversion_rates) {
-        this.currencies = Object.keys(data.conversion_rates); // Pegue as moedas da chave conversion_rates
+        this.currencies = Object.keys(data.conversion_rates); 
       } else {
         this.errorMessage = 'Currencies not found.';
       }
@@ -39,21 +39,21 @@ export class CurrencyComparisonComponent implements OnInit {
   });
 }
 
-  // Buscar a taxa de câmbio
+  // Search the currency exchange
   compareCurrencies(): void {
     if (!this.baseCurrency || !this.targetCurrency) return;
 
-    this.isLoading = true;  // Ativar o carregamento
+    this.isLoading = true; 
     this.currencyApiService.getExchangeRate(this.baseCurrency, this.targetCurrency).subscribe({
       next: (data) => {
-        console.log('API Response (Exchange Rate):', data); // Verifique a resposta da taxa de câmbio
-        this.exchangeRate = data.conversion_rate || null; // Ajuste para o formato da resposta
+        console.log('API Response (Exchange Rate):', data); // Verify the currency exchange
+        this.exchangeRate = data.conversion_rate || null; // djusts the answer type
         this.errorMessage = null;
-        this.isLoading = false; // Desativar o carregamento
+        this.isLoading = false; 
       },
       error: (err) => {
         this.errorMessage = 'Failed to fetch exchange rate.';
-        this.isLoading = false; // Desativar o carregamento
+        this.isLoading = false; 
         console.error(err);
       },
     });

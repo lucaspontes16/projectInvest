@@ -56,14 +56,14 @@
 .card-home{
     
         margin: auto;
-        width: 95%; // Deixa o Bootstrap controlar a largura
-        height: auto; // Ajusta a altura automaticamente
+        width: 95%; 
+        height: auto; 
         border-radius: 0px;
         //margin: 5rem 0px;
     
-        // Regras específicas para telas grandes
+        
         @media (min-width: 992px) {
-            width: 95%; // Redefine largura para telas grandes
+            width: 95%; 
             height: 50%;
     
         }

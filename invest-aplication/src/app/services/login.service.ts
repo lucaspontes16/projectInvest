@@ -47,8 +47,8 @@ export class LoginService {
     sessionStorage.setItem('auth-token', response.token);
     sessionStorage.setItem('username', response.name);
 
-    // Verifica se 'role' está presente na resposta e armazena ela no sessionStorage
-    const role = response.role ?? 'user';  // Se role não estiver presente, define como 'user' por padrão
+    // Verifies if  the 'role' is present and stores on sessionStorage
+    const role = response.role ?? 'user';  // if the roles is not defined, 'user' is defined as a default role
     sessionStorage.setItem('role', role);
   }
 

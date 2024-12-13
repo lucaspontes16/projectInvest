@@ -11,9 +11,9 @@ export class DefaultLoginLayoutComponent {
   @Input() title: string = ""; //title of the form
   @Input() primaryBtnText: string = ""; //sign in button
   @Input() secondaryBtnText: string = ""; //sign up button
-  @Input() disablePrimaryBtn: boolean = true; // se o botao primary esta desabilitado
-  @Output("submit") onSubmit = new EventEmitter();// quando for criar a funcao submit
-  @Output("navigate") onNavigate = new EventEmitter();// quando for criar a funcao submit
+  @Input() disablePrimaryBtn: boolean = true; // if the primary botton is disable 
+  @Output("submit") onSubmit = new EventEmitter();// when the submit function is created
+  @Output("navigate") onNavigate = new EventEmitter();
 
   submit(){
     this.onSubmit.emit();

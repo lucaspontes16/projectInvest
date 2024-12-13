@@ -77,7 +77,7 @@ main {
                 cursor: pointer;
 
                 &:disabled {
-                    opacity: 0.5; //quando o botao estiver disabilitado
+                    opacity: 0.5; //when the button is disabled
                 }
 
                 &.btn-primary {

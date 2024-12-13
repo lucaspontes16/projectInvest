@@ -9,7 +9,7 @@ import { NewsService } from 'src/app/services/news.service';
   imports: [RouterLink, CommonModule, NewsCardComponent],
   templateUrl: './news-page.component.html',
   styleUrl: './news-page.component.scss',
-  encapsulation: ViewEncapsulation.None, // Remove encapsulamento
+  encapsulation: ViewEncapsulation.None, // Remove the encapsualtion
   
 })
 export class NewsPageComponent implements OnInit {
@@ -23,7 +23,7 @@ constructor(private newsService: NewsService) {}
   ngOnInit(): void {
     this.newsService.getInvestmentNews().subscribe({
       next: (data) => {
-        console.log('Data received:', data); // Adicionei o console.log para verificar os dados
+        console.log('Data received:', data); // console.log for data verification
         this.newsArticles = data.articles;
       },
       error: (err) => console.error('Erro loading news', err),
